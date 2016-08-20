@@ -33,7 +33,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-paginate: 5
+paginate: 2
 
 production_url : http://noo-se.github.io
 
