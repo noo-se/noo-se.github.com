@@ -14,6 +14,8 @@ permalink:        pretty
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
+baseurl: /
+url: https://noo-se.github.io
 title : localhost exposed
 tagline: finding vulnerabilities in software and wetware
 description: personal website of Jan Wikholm exploring vulnerabilities in humans and machines alike.
@@ -35,7 +37,7 @@ author :
 #
 paginate: 2
 
-production_url : http://noo-se.github.io
+production_url: https://noo-se.github.io
 
 gems: ["jekyll-sitemap"]
 
