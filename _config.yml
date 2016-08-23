@@ -54,6 +54,7 @@ gems:
   - redcarpet
   - jekyll-gist
   - pygments.rb
+  - jekyll-redirect-from
 
 # Markdown
 markdown: redcarpet
