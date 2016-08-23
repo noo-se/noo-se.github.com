@@ -15,6 +15,7 @@ permalink:        pretty
 # so be sure to set them if your theme uses them.
 #
 baseurl: /
+name: localhost exposed
 url: https://noo-se.github.io
 title : localhost exposed
 tagline: finding vulnerabilities in software and wetware
