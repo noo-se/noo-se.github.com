@@ -1,19 +1,20 @@
 # This is the default format. 
 # For more see: http://jekyllrb.com/docs/permalinks/
-# permalink: /:categories/:year/:month/:day/:title 
+permalink: /:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 # Dependencies
 markdown:         redcarpet
 highlighter:      pygments
-
+# highlighter: 
 # Permalinks
-permalink:        pretty
+# permalink:        pretty
 # relative_permalinks: true
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
+baseurl: /
 title : localhost exposed
 tagline: finding vulnerabilities in software and wetware
 description: personal website of Jan Wikholm exploring vulnerabilities in humans and machines alike.
@@ -33,11 +34,16 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-paginate: 5
-
-production_url : http://noo-se.github.io
-
-gems: ["jekyll-sitemap"]
+paginate: 2
+category_dir: categories
+category_title_prefix: 
+production_url : https://noo-se.github.io
+url: https://noo-se.github.io
+gems: 
+  - jekyll-paginate
+  - redcarpet
+  - jekyll-gist
+  - pygments.rb
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
