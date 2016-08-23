@@ -1,0 +1,72 @@
+---
+layout: post
+title: 'Path to OSCP - Part 1'
+date: 2016-02-14 20:08:56.000000000 +03:00
+type: post
+published: true
+status: publish
+categories:
+- Path to OSCP
+tags:
+- nessus
+- oscp
+- protip
+- sqlite
+meta:
+  _thumbnail_id: '215'
+  _publicize_done_external: a:2:{s:7:"twitter";a:1:{i:13596827;s:50:"https://twitter.com/unfo/status/698916872998096896";}s:8:"facebook";a:1:{i:13596832;s:38:"https://facebook.com/10153978743428281";}}
+  _rest_api_published: '1'
+  _rest_api_client_id: '43452'
+  _publicize_job_id: '19797997277'
+  publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=106127&stype=M&topic=6104682558484738048&type=U&a=JFCa
+  _publicize_done_13656638: '1'
+  _wpas_done_13596824: '1'
+  _publicize_done_13656641: '1'
+  _wpas_done_13596827: '1'
+  publicize_twitter_user: unfo
+  _publicize_done_13656646: '1'
+  _wpas_done_13596832: '1'
+  publicize_tumblr_url: http://.tumblr.com/post/139301077340
+  _publicize_done_13656651: '1'
+  _wpas_done_13596836: '1'
+author:
+  login: jwikholm
+  email: jw@jw.fi
+  display_name: Jan Wikholm
+  first_name: ''
+  last_name: ''
+excerpt: First part of my series on how and what I learn as I prepare and, eventually,
+  go through the OSCP certification within the next two months.
+---
+<p>Hello World!</p>
+<p>Two weeks ago I signed up for the OSCP certification and its 30-day course, Penetration testing with Kali Linux. OSCP stands for Offensive Security Certified Professional and basically it is a certification for penetration testers, i.e. people trying to find security vulnerabilities in your IT infra and apps. From what I've read, it is one of the toughest courses and exams out there with legit hands on experience instead of multiple choice chances.</p>
+<p>And during these past 2 weeks I have been getting ready for the course in any way that I can think of. I have joined the #offsec channel on freenode and have been lurking there getting some good tips on how to prep.</p>
+<p>As I am going through videos, blog posts, CTFs, vulnerable VMs etc. I am learning quite a few new tips and tricks. And I figured that I'd share with you - whether it is some other you or just me 5 years from now - my learning process and the new ideas I find.</p>
+<p>I'm doing this as a video + blog post combo so that I can get through the main ideas verbally and then provide the tech details in the blog - so that you can copy paste code snippets or URLs quite a lot more easily than listening to me slur about semicolons and brackets.</p>
+<p>So without further ado, here's the semi-coherent part 1 of my series - <em>Path to OSCP</em>.</p>
+<p><a href="https://www.youtube.com/watch?v=A2s8_r973Xw">https://www.youtube.com/watch?v=A2s8_r973Xw</a></p>
+
+<script>
+document.write('<iframe width="560" height="315" src="https://www.youtube.com/embed/A2s8_r973Xw" frameborder="0" allowfullscreen></iframe>');
+</script>
+
+<p>And here is the relevant code bits:</p>
+
+{% highlight sql %}
+sqlite databasename.db
+sqlite> .mode csv
+sqlite> .import yourfile.csv yourtable
+sqlite> .schema yourtable
+sqlite> select count(*) from yourtable;
+{% endhighlight %}
+
+<p>And of course if you had to split your scans into multiple parts and thus have multiple CSV files, you can just repeat the import and it will append to your existing table.</p>
+<p>Then for example to get the <em>"Which vulnerabilities were already previously known"</em></p>
+
+{% highlight sql %}
+sqlite> .mode csv
+sqlite> .once some_output_file.csv
+sqlite> select  "Plugin ID", CVE, CVSS, Risk, Host, Protocol, Port, Name from oldresults o where Risk <> 'None' and exists (select * from newresults w where w."Plugin ID"=o."Plugin ID" and w.CVE=o.CVE and w.CVSS=o.CVSS and w.Host=o.Host and w.Protocol=o.Protocol) order by Host asc;
+{% endhighlight %}
+
+<p>Could be that there are more elegant SQL queries for this, but, hey, at least this one worked for me.</p>

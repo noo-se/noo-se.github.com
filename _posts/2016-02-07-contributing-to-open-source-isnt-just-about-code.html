@@ -1,0 +1,96 @@
+---
+layout: post
+title: Contributing to open-source isn't just about code
+date: 2016-02-07 15:35:51.000000000 +03:00
+type: post
+published: true
+status: publish
+categories:
+- Original content
+tags: []
+meta:
+  _rest_api_client_id: '-1'
+  _rest_api_published: '1'
+  _oembed_bc7bedca66db29b3ac584dfc7eccf90d: '{{unknown}}'
+  _publicize_job_id: '19565052464'
+  _thumbnail_id: '158'
+author:
+  login: jwikholm
+  email: jw@jw.fi
+  display_name: Jan Wikholm
+  first_name: ''
+  last_name: ''
+excerpt: |-
+  Coding is hot. Documentation is mandatory paperwork. But sometimes having paperwork makes all the difference.
+
+  Getting started can be as easy as fixing typos and formatting brain-vomit blocks of text into human-readable sentences.
+---
+<p>Coding is hot. Documentation is mandatory paperwork. But sometimes having paperwork makes all the difference.</p>
+<p>Coding is creation unleashed. Your imagination runs wild and your mind conjures bits to do your bidding. You enter the zone and whip up some insane unrolled loops for your micro-optimization that produces a gigantic effect when run at web-scale™.</p>
+<p>You are a god. You created. You made something appear where previously there was nothing.</p>
+<p>And you made it public and open-source so that all of humanity can feel the positive, momentous impact of your contribution.</p>
+<p>All the user needs to do is... wait. Yeah, sure, please, scroll up your bash history to find what the proper steps are. Nice. A big wall of text paste directly from your terminal into the Github markdown triple-backtick code block that will just monospace the hell out of it.</p>
+<p>Because, surely, any noob can just read what you have executed and replicate those.</p>
+<p>Right? RIGHT?!</p>
+<h3>ಠ_ಠ</h3>
+<p>Of course this is relative to your target audience. Sometimes it is quite sad choosing to limit your target audience to people running on the exact same hardware/software setup at the same time (i.e. no more than 6 months later). And that's effectively what quite a lot small hobby projects are doing.</p>
+<p>Because if you are not running the exact same distribution and its version you will most probably run into compatibility issues with library versions, package names and other eldritch horrors that should've been buried a long time ago, but still lurk in corners.</p>
+<p>That's where documentation comes in. Documentation about:</p>
+<ul>
+<li>what exactly are the requirements
+<ul>
+<li>how to get those requirements.</li>
+<li>what versions are supported etc.</li>
+</ul>
+</li>
+<li>how to build your system</li>
+<li>what are the command-line parameters it accepts</li>
+<li>does it depend on environmental factors (presence of directories / ENV vars etc)</li>
+</ul>
+<p>And so forth.</p>
+<p>"But you can always just run <code>mycommand.sh -h</code>"</p>
+<p>Sure. If you can actually get it installed. (Sidenote: if your program does not support <code>--help</code>, <code>(ノ ಠ益ಠ)ノ~ (\;｡▽｡)ヽ</code>).</p>
+<p>There's a reason why projects such as <a href="https://github.com/tldr-pages/tldr" target="_blank">tldr</a> exist. It's because a lot of documentation sucks. But of course there are more reasons for the suckiness besides just lack of time. People understand things in different ways, and I personally have met people who are able to consume the contents of manual pages without Examples section, but I personally am not one.</p>
+<p>And now we finally get to my original point of this post.</p>
+<h2>Contributing to open-source isn't just about code</h2>
+<p>Disregarding all bad PR that writing documentation gets commonly among devs, it is still almost as important as the code itself.</p>
+<p>Almost because no code + beautiful docs = a good plan, code + no docs = possibly shippable solution to an urgent problem. But that should be changed to code + some docs ASAP or otherwise you will have a ticking time-bomb on your hands.</p>
+<p>But how can you get started with documenting if you don't even know how the system works, because it <strong>is</strong> lacking the docs that you wanted to contribute?</p>
+<p>Well it is not as much of a catch-22 as it at first seems like.</p>
+<p>There are two types of docs that you can contribute:</p>
+<ol>
+<li>From scratch documentation that actually requires you to read the source-code or at least interview/probe the author for the magic sauce.</li>
+<li>Fact-checking, spell-checking, typo-fixing, formatting</li>
+</ol>
+<p>I'd say that the easiest way to becoming an open-source contributor is by doing the latter.</p>
+<p>Is the documentation up-to-date? Does <code>mycommand -l</code> actually do what it is documented as doing? Have some switches been deprecated? Are there new features that are being used by the developer(s) but could potentially be of use to others if only they knew about them? (Posting about them in changelogs / commit messages does not count).</p>
+<p>Is the documentation riddled with simple typos, grammar snafus or simply incomprehensible sentences and long-running paragraphs?</p>
+<p>Every single typo a potential user finds while reading the docs will decrease the credibility of the product itself. Every. Single. One.</p>
+<p>"If they didn't manage to write <em>that simple word</em> correctly, how could they have managed to write this complex piece of software without similar faults?"</p>
+<p>That's a thought process that I have found myself going through on many an occasion.</p>
+<p>Language matters because it is communication. Typos matter. Speak what you want of grammar nazis and other such derogatory terms, but such talents should/could be put to use in making the open-source a better place.</p>
+<p>.oO(<strong> All hail grammar na.. </strong>nope, that doesn't feel right, nevermind...)</p>
+<p>If you have any word processor that has a spelling database, run the documentation through it, exempt technical jargon or add it to your dictionary, and see if anything glaring pops up.</p>
+<p>If you find <em>your</em> instead of <em>you're</em>, fix it.<br />
+If you find <em>wierd</em> insted of <em>weird</em>, fix it.<br />
+If you find a double negative where a correct positive term would be clearer, fix it.<br />
+If you find yourself reading the sentence over and over again, split it, fix it.</p>
+<p>There is no such thing as a fix too small.</p>
+<p>Hell, I would argue that the smaller the fixes, the less likely they are to cause any sort of issues with the project owners merging it to the main codebase.</p>
+<p>Of course, you can have multiple typo fixes in a single commit and/or pull request, so you don't abuse the mental resources of the maintainers, but don't wait for perfection -- i.e. "all done" -- just commit and contribute.</p>
+<p>Example A:</p>
+<p><a href="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=690b0543a813b0ecfc51b0374c0ce6c8275435f0" target="_blank">Dad gets his 4-year-old daughter to make a git commit to the Linux kernel</a></p>
+<p>The diff was this:</p>
+<pre>
+  1.9 Ext4 file system parameters
+- ------------------------------
++ -------------------------------</pre>
+<p>So they added a single dash. Yes. They added it and went to the trouble of committing (well their parent anyways).</p>
+<p>That's quite a lot more code than most open-source users have ever committed to the Linux kernel -- or, mostly, to open-source in general.</p>
+<p>Another example can be found in my own Github history:</p>
+<ul>
+<li><a href="https://github.com/rsyslog/rsyslog-doc/pull/208" target="_blank">rsyslog - one typo fix and one logical fix for formatting</a></li>
+</ul>
+<p>As a former developer, it feels kind of weird to be contributing just small typo fixes, but the reason why I did is because as a reader of said docs I was feeling less confident in the software I was about to use. I wanted to make other learners feel <strong>more</strong> confident.</p>
+<p>Github makes it ever the more easier as it has a very wizard-like experience for creating your fork of some code, changing the file online in your browser, committing, and finally creating a pull request for it.</p>
+<p><em>Main picture CC-BY Ruiwen Chua - https://www.flickr.com/photos/ruiwen/3260095534/</em></p>

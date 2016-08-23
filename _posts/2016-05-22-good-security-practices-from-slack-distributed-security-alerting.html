@@ -1,0 +1,45 @@
+---
+layout: post
+title: Good security practices from Slack - Distributed security alerting
+date: 2016-05-22 11:45:03.000000000 +03:00
+type: post
+published: true
+status: publish
+categories:
+- Curated links
+tags:
+- alert
+- infosec
+- soc
+- tools
+meta:
+  _publicize_done_external: a:2:{s:7:"twitter";a:1:{i:13596827;s:50:"https://twitter.com/unfo/status/734304079975878659";}s:8:"facebook";a:1:{i:13596832;s:38:"https://facebook.com/10154255479888281";}}
+  _rest_api_published: '1'
+  _rest_api_client_id: '-1'
+  _publicize_job_id: '23058473187'
+  publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=106127&stype=M&topic=6140069763654742016&type=U&a=sg8E
+  _publicize_done_13656638: '1'
+  _wpas_done_13596824: '1'
+  _publicize_done_13656641: '1'
+  _wpas_done_13596827: '1'
+  publicize_twitter_user: unfo
+  _publicize_done_13656646: '1'
+  _wpas_done_13596832: '1'
+  publicize_tumblr_url: http://.tumblr.com/post/144743912460
+  _publicize_done_13656651: '1'
+  _wpas_done_13596836: '1'
+  publicize_google_plus_url: https://plus.google.com/+JanWikholm/posts/Tcj1qXXkkmY
+  _publicize_done_13855399: '1'
+  _wpas_done_13786862: '1'
+author:
+  login: jwikholm
+  email: jw@jw.fi
+  display_name: Jan Wikholm
+  first_name: ''
+  last_name: ''
+---
+<p>In <a href="https://slack.engineering/distributed-security-alerting-c89414c992d6#.7fpm7v7eq">Distributed Security Alerting</a> Ryan Huber describes some pitfalls of common security 'best practices' of monitoring systems.</p>
+<p>Most of the things he has issues with, I've experienced first-hand in security and sysadmin work in general.</p>
+<p>He then explains how at Slack they have a reactive system where the automation asks you whether you just ran some sensitive commands or not and then requires two factor auth to prove that you did. (Or else it escalates.)</p>
+<p>This is quite a handy paradigm of monitoring, but I personally have been wanting a way to say to monitoring "so, I'm going to do stuff now and all problems it raises in the next 5 mins are my fault" -- I mean, Nagios sort of has that with scheduled downtime but Nagios is not a security tool.</p>
+<p>Maybe my idea of a blanket statement is a bit too naive and might end up masking unintended consequences so reacting to things that actually did happen is a more mature approach.</p>

@@ -1,0 +1,63 @@
+---
+layout: post
+title: Path to OSCP - Part 10, Days 9, 10 and 11
+date: 2016-03-10 07:03:14.000000000 +03:00
+type: post
+published: true
+status: publish
+categories:
+- Path to OSCP
+tags:
+- oscp
+- vuln
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: '43452'
+  _publicize_job_id: '20607926205'
+  publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=106127&stype=M&topic=6113544514813648896&type=U&a=TODB
+  _publicize_done_13656638: '1'
+  _wpas_done_13596824: '1'
+  _publicize_done_external: a:2:{s:7:"twitter";a:1:{i:13596827;s:50:"https://twitter.com/unfo/status/707778831340310528";}s:8:"facebook";a:1:{i:13596832;s:38:"https://facebook.com/10154037546183281";}}
+  _publicize_done_13656641: '1'
+  _wpas_done_13596827: '1'
+  publicize_twitter_user: unfo
+  _publicize_done_13656646: '1'
+  _wpas_done_13596832: '1'
+  publicize_tumblr_url: http://.tumblr.com/post/140781173995
+  _publicize_done_13656651: '1'
+  _wpas_done_13596836: '1'
+  publicize_google_plus_url: https://plus.google.com/+JanWikholm/posts/gZkQ2eYY8LF
+  _publicize_done_13855399: '1'
+  _wpas_done_13786862: '1'
+author:
+  login: jwikholm
+  email: jw@jw.fi
+  display_name: Jan Wikholm
+  first_name: ''
+  last_name: ''
+---
+<p>https://youtu.be/0x75b9xA2Og</p>
+<p>[ sorry for the rasping sounds caused by the mic rubbing against my coarse beard :/ ]</p>
+<p>I barely got myself to do this vlog, because I wanted to just try and get root! But I really needed to do it so that a lot of this new stuff doesn't get lost in my enthusiasm.</p>
+<h2>PIVOT!</h2>
+<p><img class="alignnone size-full wp-image-488" src="{{ site.baseurl }}/assets/friends-pivoooot.jpg" alt="friends-pivoooot" width="800" height="451" /></p>
+<p>My first pivot from a compromised host into a new network behind a firewall!</p>
+<p>If you don't know what pivoting is, this<a href="https://en.wikipedia.org/wiki/Exploit_(computer_security)#Pivoting"> Wikipedia paragraph</a> explains:</p>
+<blockquote><p><b>Pivoting</b> refers to a method used by <a title="Penetration test" href="https://en.wikipedia.org/wiki/Penetration_test">penetration testers</a> that uses the compromised system to attack other systems on the same network to avoid restrictions such as <a title="Firewall (computing)" href="https://en.wikipedia.org/wiki/Firewall_(computing)">firewall</a> configurations, which may prohibit direct access to all machines. For example, if an attacker compromises a web server on a corporate network, the attacker can then use the compromised web server to attack other systems on the network. These types of attacks are often called multi-layered attacks. Pivoting is also known as <i>island hopping</i>.</p></blockquote>
+<p>So yeah! I managed to pivot my way behind a firewall. And there was much rejoicing!</p>
+<p>Have been using Metasploit to help me do recon / probing / exploiting. Also; the <strong>hosts</strong> and <strong>services</strong> commands in msf are really awesome for gathering information on the target network and systems.</p>
+<h2>The grokking has begun</h2>
+<p>I have truly begun <a href="http://www.merriam-webster.com/dictionary/grok">to grok</a> the attacker mindset! Instead of being in a defensive traditional blue team reactive stance, I am starting to think like an attacker. If I see someone in our security monitoring systems trying to bruteforce / attack in general some services we have, my gut tells me that I should do an nmap scan of the services to check what the attackers see -- and then check <strong>searchsploit </strong>for any tips.</p>
+<h2>Real world use</h2>
+<p>I have already started to see real world use for the skills and tools I am using on this course.</p>
+<p><a href="https://blogs.msdn.microsoft.com/canberrapfe/2012/03/30/capture-a-network-trace-without-installing-anything-capture-a-network-trace-of-a-reboot/"><strong>netsh trace</strong></a> to capture traffic without wireshark / pcap.</p>
+<p><a href="http://packetlife.net/library/cheat-sheets/">Nice set of PDF cheat sheets from packetlife</a>.</p>
+<h2>Misconfigurations and demo sites will kill your infosec posture.</h2>
+<p>That might be a slightly clickbait-y headline, but there is a kernel of truth there. It doesn't matter how shiny and blinky your new <em>Next-Gen-Semantic-AI-Software-Defined-Matrix-Neural-Firewall</em> is, if you have ftp/ssh/whatever open to the world and your admins have by accident left some very simple to guess user credentials on the system, you are in for a bad day.</p>
+<p>"But SELinux/AppArmor/GRC will save the day!" I hear you say. Yes! It might. Hence you need skilled <em>and</em> motivated admins to do the needful i.e. remove the mis- from misconfiugration.</p>
+<p>Excellent example of this is this <a href="http://www.anandpraka.sh/2016/03/how-i-could-have-hacked-your-facebook.html">new post on Facebook bug bounty</a>, where a smart guy bagged $15'000 for basically finding that the beta (and some dev) version of Facebook didn't have the proper rate-limiting in place for a <strong>security</strong> related API: the forgot password feature.</p>
+<p>You woulda thunk that it would be like base level of security that people will try to bruteforce these services and they should not be allowed to.</p>
+<p><strong>Don't assume something's fixed. Poke it with a stick and see if it breaks!</strong></p>
+<p>And on that bombshell, it's time to end the show...!</p>
+<p>[Edit:]</p>
+<p>Forgot to add this Youtube link: https://www.youtube.com/watch?v=vdnCZZepcUU</p>

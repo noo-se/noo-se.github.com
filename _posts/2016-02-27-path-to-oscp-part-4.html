@@ -1,0 +1,72 @@
+---
+layout: post
+title: Path to OSCP - Part 4
+date: 2016-02-27 19:16:28.000000000 +03:00
+type: post
+published: true
+status: publish
+categories:
+- Path to OSCP
+tags:
+- documentation
+- oscp
+- tools
+meta:
+  _publicize_done_13656638: '1'
+  _rest_api_published: '1'
+  _rest_api_client_id: '43452'
+  _publicize_job_id: '20234577294'
+  publicize_linkedin_url: https://www.linkedin.com/updates?discuss=&scope=106127&stype=M&topic=6109380398888861698&type=U&a=dT9E
+  _wpas_done_13596824: '1'
+  _publicize_done_external: a:2:{s:7:"twitter";a:1:{i:13596827;s:50:"https://twitter.com/unfo/status/703614716258689024";}s:8:"facebook";a:1:{i:13596832;s:38:"https://facebook.com/10154008898148281";}}
+  _publicize_done_13656641: '1'
+  _wpas_done_13596827: '1'
+  publicize_twitter_user: unfo
+  _publicize_done_13656646: '1'
+  _wpas_done_13596832: '1'
+  publicize_tumblr_url: http://.tumblr.com/post/140091759330
+  _publicize_done_13656651: '1'
+  _wpas_done_13596836: '1'
+author:
+  login: jwikholm
+  email: jw@jw.fi
+  display_name: Jan Wikholm
+  first_name: ''
+  last_name: ''
+---
+<p>https://www.youtube.com/watch?v=i6qC5_6o3Eg</p>
+<p>[Note: This and future vlog posts might seem incoherent unless you actually watch the vlog. This text is mostly just additional docs for future reference.]</p>
+<p>I have been mostly been thinking about how to do documentation.</p>
+<p><em>Get all tools ready</em></p>
+<ul>
+<li>Documentation
+<ul>
+<li>KeepNote</li>
+<li>Dropbox Paper</li>
+<li>Github / Markdown</li>
+<li>Word w/ Offsec pentest report from start?</li>
+</ul>
+</li>
+<li>Excel or some sort of network diagram for recon findings</li>
+</ul>
+<p>One of the things I forgot to mention during the video was that I have recently been doing post-assessment for an actual pen-test that I have done previously and found that I had ... misplaced ... some of the exploit/recon code that I had written in C# for the test. Lesson learned: Keep everything organized and do not trust your future self to remember anything. DOCUMENT EVER... ALL THE THINGS!</p>
+<p><img class="alignnone size-full wp-image-350" src="{{ site.baseurl }}/assets/15720379.jpg" alt="15720379" width="400" height="400" /></p>
+<p>&nbsp;</p>
+<p>Starting to learn to think like an attacker, from the <a href="https://www.offensive-security.com/pwk-online/PWKv1-REPORT.doc">OffSec pentest report template</a>:</p>
+<blockquote><p><strong>John added administrator and root level accounts on all systems compromised</strong>. In addition to the administrative/root access, a Metasploit meterpreter service was installed on the machine to ensure that additional access could be established.</p></blockquote>
+<p>Pentest standard - <a href="http://www.pentest-standard.org/index.php/Main_Page">http://www.pentest-standard.org/index.php/Main_Page</a></p>
+<p><a href="http://rastamouse.me/blog/2014/scream-method-2/">Windows VulnHub - Scream writeup by RastaMouse</a></p>
+<p>Lessons learned from above:</p>
+<ul>
+<li>Always do UDP scans also to find rarer services like TFTP</li>
+<li>How to craft MS-DOS (and other) raw payloads with <strong>msfpayload</strong> and other tools</li>
+</ul>
+<p>OffSec Exam Guide - <a href="https://www.offensive-security.com/exams/#!index.md">https://www.offensive-security.com/exams/#!index.md</a></p>
+<blockquote><p>You can only use Metasploit <strong>Auxiliary, Exploit, and Post </strong>modules against <strong>one</strong> target machine of your choice</p>
+<div class="md-text">You can use the following against <strong>all</strong> of the target machines:</div>
+<div class="md-text">multi handler (aka exploit/multi/handler)</div>
+<div class="md-text">meterpreter</div>
+<div class="md-text">msfpayload &amp; msfencode</div>
+<div class="md-text">msfvenom</div>
+</blockquote>
+<div class="md-text">T minus 0 days.</div>

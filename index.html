@@ -1,37 +1,35 @@
 ---
 layout: default
-title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
+<div class="blog">
+  <div class="intro">Hi, my name is JW and this is localhost.exposed, my site where I share my views on tech, infosec, motivation and other misc subjects. I hope you find something that brings value to you. Do not hesitate to contact me on social media, email or IRC.</div>
+    <hr/>
+      <h1>Path to OSCP</h1>
+      <p class="description-of-content">
+        I have put series on its own page: <a href="/path-to-oscp">Path to OSCP</a> for longevity, so it is easier to access as a single project.
+      </p>
+      <hr/>
+      {% assign original_content = site.categories['Original content'] | sort 'date' %} 
+      {% assign curated_links = site.categories['Curated links'] | sort 'date' %}
+      <h1>Original content</h1>
+        <p class="description-of-content">These are original blog posts written by myself on various topics related to IT, infosec, career development, motivation etc.</p>
+        <ul>
+          {% for post in original_content %}
+          <li>
+              <span class="date">{{ post.date | date: '%Y %b %d' }}</span> - <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+      </ul>
+      <hr/>
+       <h1>Curated links</h1>
+        <p class="description-of-content">Most of the good stuff online on the other hand is made by other people and below you find my curated link list 
+        -- these are articles that I find worth sharing attached with a few remarks of my own</p>
+        <ul>
+          {% for post in curated_links %}
+          <li>
+              <span class="date">{{ post.date | date: '%Y %b %d' }}</span> - <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+      </ul>
 </div>
