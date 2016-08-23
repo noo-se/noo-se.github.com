@@ -57,8 +57,12 @@ gems:
   - jekyll-redirect-from
 
 # Markdown
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  hard_wrap: false
 
 production_url : https://noo-se.github.io
 url: https://noo-se.github.io
