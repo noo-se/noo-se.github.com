@@ -8,7 +8,7 @@ markdown:         redcarpet
 highlighter:      pygments
 
 # Permalinks
-permalink:        pretty
+# permalink:        pretty
 # relative_permalinks: true
 
 # Themes are encouraged to use these universal variables 
@@ -55,6 +55,7 @@ gems:
   - jekyll-gist
   - pygments.rb
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 whitelist:
  - jekyll-redirect-from
@@ -69,11 +70,7 @@ kramdown:
 
 production_url : https://noo-se.github.io
 url: https://noo-se.github.io
-gems: 
-  - jekyll-paginate
-  - redcarpet
-  - jekyll-gist
-  - pygments.rb
+
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
