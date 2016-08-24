@@ -56,6 +56,9 @@ gems:
   - pygments.rb
   - jekyll-redirect-from
 
+whitelist:
+ - jekyll-redirect-from
+
 # Markdown
 markdown: kramdown
 highlighter: rouge
