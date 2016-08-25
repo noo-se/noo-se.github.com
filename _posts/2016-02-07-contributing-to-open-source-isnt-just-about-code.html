@@ -25,6 +25,7 @@ excerpt: |-
 
   Getting started can be as easy as fixing typos and formatting brain-vomit blocks of text into human-readable sentences.
 ---
+<p><img src="/assets/contributing.jpg" alt="Picture of code" style="width: 100%"/></p>
 <p>Coding is hot. Documentation is mandatory paperwork. But sometimes having paperwork makes all the difference.</p>
 <p>Coding is creation unleashed. Your imagination runs wild and your mind conjures bits to do your bidding. You enter the zone and whip up some insane unrolled loops for your micro-optimization that produces a gigantic effect when run at web-scale™.</p>
 <p>You are a god. You created. You made something appear where previously there was nothing.</p>
@@ -81,10 +82,10 @@ If you find yourself reading the sentence over and over again, split it, fix it.
 <p>Example A:</p>
 <p><a href="http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=690b0543a813b0ecfc51b0374c0ce6c8275435f0" target="_blank">Dad gets his 4-year-old daughter to make a git commit to the Linux kernel</a></p>
 <p>The diff was this:</p>
-<pre>
+{% highlight git %}
   1.9 Ext4 file system parameters
 - ------------------------------
-+ -------------------------------</pre>
++ -------------------------------{% endhighlight %}
 <p>So they added a single dash. Yes. They added it and went to the trouble of committing (well their parent anyways).</p>
 <p>That's quite a lot more code than most open-source users have ever committed to the Linux kernel -- or, mostly, to open-source in general.</p>
 <p>Another example can be found in my own Github history:</p>

@@ -34,21 +34,26 @@ author:
   display_name: Jan Wikholm
   first_name: ''
   last_name: ''
+excerpt: 
 ---
-<p>https://youtu.be/Hncq0NwSMh8</p>
+<p><a href="https://www.youtube.com/watch?v=Hncq0NwSMh8">https://www.youtube.com/watch?v=Hncq0NwSMh8</a></p>
+<script>
+document.write('<iframe width="560" height="315" src="https://www.youtube.com/embed/Hncq0NwSMh8" frameborder="0" allowfullscreen></iframe>');
+</script>
 <p>After 8 more hours of studying, I have progressed +50 pages and +1:40h in video material. Most of my time has been spent running scans or fiddling around in hexadecimal trying to get exploits working.</p>
 <p>Yesterday I was severely overwhelmed by how much data I am already beginning to gather -- open ftp servers, Samba shares, public SNMP enumeration etc.</p>
 <p>I decided that I'll gather the raw data in KeepNote for further reading, but I am beginning to collect the main bits -- IP, hostname, domain/workgroup, OS etc. -- into a simple Excel spreadsheet that I am evolving as needed.</p>
 <p>So far I have seen so many different Windows versions that <a href="https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions">this Wikipedia page</a> came in handy since I haven't been in touch with the Windows world and forgot the version numbers :)</p>
 <p>I also learned how you can resume nmap scans if needed!</p>
-<pre>nmap -oN your-results.nmap $HOST
+{% highlight bash %}nmap -oN your-results.nmap $HOST
 Ctrl-C^ here
 # then later
 nmap --resume your-results.nmap
-</pre>
+{% endhighlight %}
 <p>And done! But as I learned, this does not work over VM suspends since it somehow relies on mmap() in the background -- I got an error when I tried...</p>
 <p>Also, just some info on why progress with exercises takes longer than watching the relevant video:</p>
-<pre># Single target scan that took ~2 hours
+
+{% highlight bash %}# Single target scan that took ~2 hours
 Completed SYN Stealth Scan at 18:02, 6768.89s elapsed (42000 total ports)
 
 # The scan that wouldn't end:
@@ -68,10 +73,10 @@ NSE: Active NSE Script Threads: 1 (0 waiting)
 ...
 NSE: Active NSE Script Threads: 1 (1 waiting)
 NSE Timing: About 99.92% done; ETC: 20:32 (0:00:06 remaining)
-</pre>
+{% endhighlight %}
 <p>Yeah.. that's from a single nmap scan of a <strong>single</strong> host! It was stuck at 99.92% for 1,5 hours before I went to sleep last night.</p>
 <p>Another snippet of interest to anyone going to work with Kali:</p>
-<pre>alias ss='import ~/ss-$(date +%F_%H%M_%S).png'</pre>
+{% highlight bash %}alias ss='import ~/ss-$(date +%F_%H%M_%S).png'{% endhighlight %}
 <p>It'll create a screenshot of the selected area and save the file in your home dir.</p>
 <p>I'm really happy I've now had actual dealings with OllyDbg, Immunity debugger and edb (Evans Debugger) -- these will come in handy when I start focusing on reverse engineering after my OSCP course :)</p>
 <p>Big thanks to anyone watching and especially leaving feedback of any form!</p>

