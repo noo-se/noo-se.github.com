@@ -61,8 +61,8 @@ ul {
 	}
 }
 
-footer { margin-top: 2em; }
-footer a { padding: 1.5em; border: 0px; }
+footer { margin-top: 2em; white-space: nowrap; }
+footer a { padding: 1.5em; border: 0px; line-height: 1.2em; }
 
 .wrapper {
 	max-width: 800px;
