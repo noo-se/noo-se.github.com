@@ -11,7 +11,7 @@ layout: default
       </p>
       <hr/>
       {% assign original_content = site.categories['Original content'] | sort 'date' %} 
-      {% assign curated_links = site.categories['Curated links'] | sort 'date' %}
+      {% assign curated_links = site.categories['Curated links'] | sort 'date' | reverse %}
       <h1>Original content</h1>
         <p class="description-of-content">These are original blog posts written by myself on various topics related to IT, infosec, career development, motivation etc.</p>
         <ul>
