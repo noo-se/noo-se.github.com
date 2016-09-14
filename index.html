@@ -10,7 +10,7 @@ layout: default
         I have put the series on its own page: <a href="/path-to-oscp">Path to OSCP</a> for longevity, so it is easier to access as a single project.
       </p>
       <hr/>
-      {% assign original_content = site.categories['Original content'] | sort 'date' %} 
+      {% assign original_content = site.categories['Original content'] | sort 'date' | reverse %} 
       {% assign curated_links = site.categories['Curated links'] | sort 'date' | reverse %}
       <h1>Original content</h1>
         <p class="description-of-content">These are original blog posts written by myself on various topics related to IT, infosec, career development, motivation etc.</p>
