@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+
+<div class="blog">
+    <h1>Road to Reversing</h1>
+        <p>For years now I have yearned for the day when I could put reverse engineering as my number one priority on the list of things to learn. Realistically it has never been on that position before as there were smarter choices to focus on &mdash; such as studying for certain certifications for business advantage etc.<br/><br/></p>
+        <h2><b>But the day has come.</b></h2>
+        <p>Join me now on the journey to learn reverse engineering.</p>
+        <p>This is an on-going series that I started in September 2016. Each post will include a vlog of the core ideas I want to document in my learning process and then the blog post will expand on those. I will work at including useful links and insights, but also honestly show you what things were hard for me and my thoughts on how I could have avoided those pitfalls.</p>
+        <p>Immediate access to the useful links:</p>
+        <ul>
+          <li><a href="https://www.youtube.com/playlist?list=PLyPJ3SHNkjIFITR-Lzsc0XSOBS7JUXsOy">YouTube playlist: Road to Reversing</a></li>
+          <li><a href="https://pinboard.in/u:unfo/t:RE">Pinboard(u:unfo, t:RE)</a></li>
+        </ul>
+        <p>And then onto the list of posts:<br/>
+        
+        {% assign road_to_reversing = site.categories['Road to Reversing'] | sort 'date' %}
+        <ul>
+          {% for post in road_to_reversing %}
+          <li>
+              <span class="date">{{ post.date | date: '%Y %b %d' }}</span> - <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        </p>
+</div>
