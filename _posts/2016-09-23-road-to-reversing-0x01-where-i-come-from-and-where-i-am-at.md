@@ -7,7 +7,7 @@ published: true
 status: publish
 categories:
 - Road to Reversing
-excerpt: "some exercepr"
+excerpt: Wherein I explain my history and current statu with regards to learning reverse engineering / assembly and describe future uses for the skills.
 ---
 
 <p>Hello World.</p>
