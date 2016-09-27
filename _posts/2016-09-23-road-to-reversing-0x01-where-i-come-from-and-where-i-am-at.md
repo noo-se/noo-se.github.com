@@ -101,7 +101,7 @@ xorloop:
 <h2>DFIR</h2>
 <p>Digital forensics comes into play when there has been an 'incident' that involves computers of some sort. Whether that is a suspected crime, e.g. financial crimes, leaking sensitive or copyright information; or whether it is a case of being the victim of a ransomware attack or a breach.</p>
 
-<p>Forensic analyst have a whole swath of tools available for them, some of them are for memory analysis and others for file analysis. But reversing again plays a key role when they discover an unidentified binary lurking in memory doing something suspicious. It is the job of a reverse engineer, who can be the same person, to figure out what this program is programmed to do and whether that is illegal or against policies / contracts and thus evidence of a hostile act. Or it could be solving how a ransomware has encrypted your documents and reversing the process to recover the files.</p>
+<p>Forensic analyst have a whole swath of tools available for them, some of them are for memory analysis and others for file analysis. But reversing again plays a key role when they discover an unidentified binary lurking in memory doing something suspicious. It is the job of a reverse engineer, who can be the same person, to figure out what this program is programmed to do and whether that is illegal or against policies / contracts and thus evidence of a hostile act. Or it could be <a href="https://digital-forensics.sans.org/blog/2014/09/09/torrentlocker-unlocked">solving how a ransomware has encrypted your documents and reversing the process to recover the files</a>.</p>
 
 <h2>Reversing things for fun and profit - CTFs and Crackmes</h2>
 
