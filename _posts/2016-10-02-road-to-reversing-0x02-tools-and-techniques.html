@@ -1,0 +1,76 @@
+---
+layout: post
+title: Road to Reversing - 0x02 - Tools and Techniques
+date: 2016-10-02 17:12:46.000000000 +03:00
+type: post
+published: true
+status: publish
+categories:
+- Road to Reversing
+excerpt: Going over three tools -- IDA, Binary Ninja and radare2 (r2) and explaining their differences in short format.
+---
+
+<p>In this second post of the series, I continue with the background information and setting up the context of my learning.</p>
+
+<p><a href="https://www.youtube.com/watch?v=L-Jc07yj91M">https://www.youtube.com/watch?v=L-Jc07yj91M</a></p>
+<script>
+document.write('<iframe width="560" height="315" src="https://www.youtube.com/embed/L-Jc07yj91M" frameborder="0" allowfullscreen></iframe>');
+</script>
+
+<h1>Tools</h1>
+
+<p>There are more tools for RE than these three, but I have focused this first tool video on the most relevant tools for me and my current focus of static analysis.</p>
+
+<blockquote>
+<b>tl;dr</b><br/>IDA as the behemoth it is, is akin to a full-blown IDE like VisualStudio or NetBeans.<br/>Binary Ninja is the sleek, quick and extensible Sublime Text and <br/>radare2 is like vim: the learning curve is quite steep, but there is exquisite power behind each single stroke of the keyboard.
+</blockquote>
+
+<h2>IDA</h2>
+
+<p><a href="https://www.hex-rays.com/products/ida/support/download_freeware.shtml">You can download the freeware version</a> of the first release of the previous major version. Current version is v6.8 so you are getting 5.0 for free. Hopefully they'll get to 7.0 soon so us students/learners can get an upgrade to v6.0.</p>
+
+<p>Unfortunately the licensing is not self-study friendly. The starter edition costs just over 500 EUR and only supports 32-bit executables. If you want 64-bit support, you will need to cough up just over 1000 EUR. This is quite prohibitive for people like me, who don't get paid to do RE yet. But given IDA's status as the <i>de facto</i> standard tool in the industry it can obviously dictate the price quite freely.</p>
+
+<p>As features goes, IDA has them all. <sup>(except undo).</sup> It boasts architecture support from basic x86 to Gameboy Advanced. And as with anything that has a million and one features, it comes with a gazillion buttons in the UI for you to configure.</p>
+
+<p>Oh yeah: Out of these three, IDA <u>freeware</u> is the only one that is <b>Windows only</b>. So you will need a VM in case you are not natively running Windows.</p>
+
+<h2>Binary Ninja (binja)</h2>
+
+<p><a href="https://binary.ninja/demo.html">Binary Ninja offers a demo version</a>, but like IDA free it is limited to 32-bit x86. The full version has wider support for architectures, but not as wide as IDA's massive collection. I personally fancy the unintrusive UI and ease of use it provides vs the massive amounts of buttons in IDA's default view.</p>
+
+<p>I see binja as the underdog challenging the industry standards. As tools go, binja is quite recent -- it was only relased a few months ago, but shows great promise. I hope to cash in on this new tool and my programming skills to hopefully create some useful plugins in Python for this environment and get most out of my purchase.</p>
+
+<h2>radare2 (r2)</h2>
+
+<p><a href="http://rada.re/r/">Radare2 is free, open-source software</a> (FOSS). You can download it from the website as an installer for your OS (Windows, OSX, Linux) or clone its source code on Github. Just opening r2 or opening a file with it will probably leave quite an empty feeling on your screen, as by default it shows almost nothing. You will need to instruct it to analyse and print things you want to see.</p>
+
+<p>To slightly dampen the learning curve to something manageable, r2 does include a visual mode and a web GUI -- I personally did not manage to get the web GUI working correctly, but based on screenshots on the website it looks fantastically easier to use than the default cli configuration.</p>
+
+<p>I have used r2 and ida free to solve crackmes, but both of them have left me cold and uninspired. I mean, I want to <i>know</i> r2 just so I could be a cool matrix-kinda hacker, but I really don't have the patience to spend that much time learning just the tool before learning the craft. IDA on the other hand seemed like taking a complex industrial-scale woodcutting, plank making deforestation machine for cutting down a single tree in your backyard.</p>
+
+<p>Binja fits in my hands &mdash; I am nowhere to mastery with it yet, but it feels at least achievable &mdash; and I like its look-n-feel.</p>
+
+<h1>Next steps</h1>
+
+<p>One of the things that scared me as I kickstarted this series was that unlike <a href="/path-to-oscp/">Path to OSCP</a> where I was following the PWK course and its lab environment, I was not enrolled on any "Learn you some RE for great good" course. I was not in square one, as I had some stuff already learnt, but neither was there a clear path forward. I sorta started making my own route by deciding that I want to learn how to do <b>static</b> analysis first.</p>
+
+<p>Today as I was chatting on #offsec, a fellow there asked me if I had chosen malware or 'deep security' from Open Security Training or if I had maybe gone through <b>all</b> of their stuff. I was perplexed. I had no idea what they were talking about. I know of Open Security Training since I have gone through their "<a href="http://opensecuritytraining.info/IntroX86.html">Introductory Intel x86</a>" course videos on Youtube, but I had not checked out their website more than that.</p>
+
+<p>Turns out, they have <a href="http://opensecuritytraining.info/Training.html">quite a few courses</a> available. The same fella told me he was going through the <a href="http://opensecuritytraining.info/IntermediateX86.html">intermediate x86</a> course. I went to check it out and it sorta made sense. It felt intuitively the right move for me to focus on a course like this.</p>
+
+<p>I am not yet sure if I will focus on the intermediate x86 or if I should first check out <a href="http://opensecuritytraining.info/IntroductionToReverseEngineering.html">introduction to reverse engineering software</a>. The latter feels more appealing as the former has dynamic analysis with WinDbg for rootkits and other anti-reversing techniques (more advanced stuff). The RE class will include dynamic analysis with debuggers, but feels a bit more down to earth.</p>
+
+<p>Maybe I will do both. I will let my gut tell me based on the first few videos of both series.</p>
+
+<hr/>
+
+<p>I thought about adding future episode ideas here, but I feel that it might be constrictive. I'd rather keep more of a documentary feel for this series, so I will make videos about things that pop up during this learning process instead of trying to come up with a fixed set of topics.</p>
+
+<hr/>
+
+<h1>Bonus content</h1>
+
+<p>This video came up just as I was planning on doing this tool comparison post, so I figured I'd link it here:</p>
+<p><a href="https://www.youtube.com/watch?v=3ZuHXR2G2Dg">Using Binary Ninja for Modern Malware Analysis</a>, does a nice job of comparing IDA (pro) and Binary Ninja for malware analysis.</p>
+
