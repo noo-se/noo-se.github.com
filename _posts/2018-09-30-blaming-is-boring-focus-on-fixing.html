@@ -1,0 +1,88 @@
+---
+layout: post
+title: Blaming is boring, focus on fixing
+date: 2018-09-30 16:00:00.000000000 +03:00
+type: post
+published: true
+status: publish
+categories:
+- Original content
+tags: []
+author:
+  email: jw@jw.fi
+  display_name: Jan Wikholm
+  first_name: ''
+  last_name: ''
+excerpt: |-
+  It's been a while since I last did a rant post, but this is something I need to vent about: I am sick of the cop-out that "the user is of course the weakest link"
+
+  The fact is very simple: we as a whole have failed if we allow people to make uneducated decisions about things whose complexity is overwhelming in the end. 
+
+---
+
+<center><img src="/assets/statue.jpg" width="100%" alt="Statue in the middle of Helsinki" /></center>
+<p>It&#39;s been a while since I last did a rant post. Mostly because as I write the rant my mind starts to make the counter arguments against all the things I rail about. But this is something I need to vent about. Even if there are exceptional cases to all rules, the following is fairly generic enough to apply to the majority.</p>
+<p>I am sick of the cop-out that <em>the user is of course the weakest link</em> and anything in a similar vein. Oh look at that silly bugger who went and done did click on that malware; well shucks I surely wouldn&#39;t have done it but you know &#39;em end users. Oh did you hear bout that one human that had faith in their fellow humans and trusted some folks online?! Yeah can you imagine! They were just begging to be robbed blind. Like seriously!</p>
+<p>NO. Just. stop.</p>
+<p>The fact is very simple: we as a whole have failed if we allow people to make uneducated decisions about things whose complexity is overwhelming in the end. There are so many different points along the path of any kind of fraud, social engineering or misclick that could have security controls in place that prevent trouble.</p>
+<h2>Case example: Phishing and payload execution</h2>
+<p>Simple case. Attacker sends a user an email with a legit sounding pretext that gets the user to click on a link and either download a file that they then open or provide credentials.</p>
+<p>Let&#39;s move step by step through all the things that could help save or recover from an unintended action.</p>
+<h3>Email security</h3>
+<p>Attacker sends the email. The company&#39;s email gateways have multiple different mechanisms that can provide detection and maybe prevention of such emails. Checks for domain black lists, domain reputation, grey listing, SPF, AV, throttling.  Best case scenario: the email is just refused entry into the organization. Alternatively, it is directly sent to a spam folder where the user will not easily stumble upon it or the bulk phishing gets flagged for review due to amount of emails suddenly being sent etc.</p>
+<h3>Labelling external email</h3>
+<p>Then you have the first user interaction, they see it in their inbox. Pretending to be a co-worker in the same organization or being an automated message from an internal system are common scenarios. Another security control to help the user assess the situation is to clearly categorize external emails - emails originating from the outside or emails containing external addresses in any field. So when the user gets an email that &quot;John shared &#39;Surprise party for boss&#39; with you&quot; and it is flagged as an external email, the user&#39;s suspiciousness has at least a chance to be triggered.</p>
+<h3>Easy reporting of suspicious emails</h3>
+<p>And speaking of being triggered, second important security control in the user interface is to have a simple method of reporting suspected phishy emails. </p>
+<blockquote><p>It is crucial that there are no negative consequences to reporting emails. </p>
+</blockquote>
+<p>Even if they end up being false positives as this would deter users from using the mechanism. Rather the user should be praised publicly for every single correct report. Equally crucial is that this mechanism is as simple as possible - preferably just a single button in the interface with maybe a dialogue asking for a brief note on why this seems suspicious to the user.</p>
+<h3>Personnel with skills, tools and authority</h3>
+<p>This requires investment in personnel on the IT security side who have the knowhow to determine false positives from true positives. This requires that there are tools for them to safely assess the potential phish without triggering any malicious actions themselves or alerting the attackers to an ongoing investigation as this would drive attackers to potentially burn their infrastructure and make it more difficult to investigate, only for them to resurface with another attack.</p>
+<p>There also needs to be proper tools and authority given to the responding personnel to take swift action if they start getting multiple reports of an identical email which would indicate an active phishing campaign targeting their organization. This means there needs to be mechanisms in place to blacklist domains and IP addresses centrally. There also should be logs of previous activity to be able to determine if any non-reporting users have actually clicked on the link. This will help the IT personnel to contact the users and start working on quarantine and other incident response procedures.</p>
+<h3>Outbound filtering</h3>
+<p>If the user had clicked on the link another security control could have prevented further problems: outbound proxy forced by centralized management with domain categorization and filtering. This would prevent users from reaching uncategorized domains - i.e. any domain that the attacker have recently created using either typo squatting, letter look-a-likes, Unicode replacements or just simply authentic sounding names. If the domain is freshly created, companies offering filtering solutions such as Symantec, Palo Alto and McAfee, wouldn&#39;t have categorized the content yet. This would require the user to request access to the new address which is a relatively uncommon occurrence in actual business needs to not bother users using legitimate sites. The outbound filter thus gives the organization yet another chance to intervene and prevent the incident from going further.</p>
+<h3>Inbound filtering</h3>
+<p>Of course the attackers may create sites with fake content first and then later use them to spread malicious files, or use well-known services like Amazon AWS, Google Drive or Github to host their payloads. The organization may determine that using Google Drive is not permitted by company policy, or that downloading certain file types and extensions is not permitted in the same proxy, but this time in inbound rules.</p>
+<h3>End point protection</h3>
+<p>There are ways for attackers to bypass the filtering by using commonly used file types to envelop their payloads - be it Word or zip files. But this is where the end point protection (EPP) software could and should be in place to detect known bad payloads or payloads which exhibit bad behaviors in general. If the user is the first in the world to try to access this specific file, then it is fairly safe to block the file. </p>
+<blockquote><p>There are very few reasons for regular office workers or consumers at home to be accessing globally unique files over the Internet.</p>
+</blockquote>
+<h3>End point detection &amp; response</h3>
+<p>If the EPP software wasn&#39;t confident enough to block the phishing payload because either its actions were not malicious enough or they are somehow time-delayed, all is not lost: using end point detection services, activities such as opening files, network connections and new processes can be sent <em>en masse</em> to backend security systems for analysis. These detection systems will be able to analyze large masses of computers and to be able to detect anomalous or malicious activity and alert either the end user or the organization&#39;s security personnel. These same systems will allow the organization to also find all of the users whose computers have performed similar actions and thus begin quarantine and incident response procedures.</p>
+<p>These same systems should be kept updated with any emerging threats and new attack patterns that are disclosed. Then security can retroactively scan the aggregate history of their organization&#39;s actions and find malicious activity that previously wasn&#39;t detected.</p>
+<h3>Application whitelisting</h3>
+<p>Malware, that is being sent for execution on the victim&#39;s computer, often uses a command and control (C2) channel to communicate new orders to or return valuable information from the computer. Another security control that could prevent spreading of the incident: application whitelisting. This means that organization has a comprehensive list of trusted applications that are allowed to a) start and b) make network connections. </p>
+<blockquote><p>If a user&#39;s Notepad.exe is trying to make new network connections, there are probable causes to raise alarms. </p>
+</blockquote>
+<p>There are methods for attackers to take over whitelisted processes, but it again makes it more difficult for the attackers.</p>
+<p>The whitelisting can also be extended to whitelisting of domain names and IP addresses instead of reactively blocking. This would make it more difficult to form the C2 channel. Any attempts to connect to new non-whitelisted addresses should be logged and investigated for malicious activity.</p>
+<h3>Separate administrative account</h3>
+<p>Depending on the attack scenario, the attackers may want to exploit the machine further than just looting the user&#39;s <em>Passwords.xlsx</em> file or encrypting their home folder for ransom. For this, it is usually required that they gain at least local administrative privileges. In order to enable the user to stop the spreading, it is important that the normal user accounts which are used to log into the computer is not given administrative access. Any normal user&#39;s regular daily activities should not include constant prompts for administrative use and thus the majority of the people in an organization would do better without any admin privileges given to them. See also: <a href='https://en.wikipedia.org/wiki/Principle_of_least_privilege'  target="_blank">Least privilege</a> and <a href='https://en.wikipedia.org/wiki/Privilege_separation'  target="_blank">Privilege separation</a>.</p>
+<p>If admin privileges are required, then it should be in the form of a separate <em>local</em> admin account that you cannot use to login. Anywhere. Most of us are conditioned to just press YES/OK to the Windows prompt for admin access when you are installing software etc. This is another place to provide more security, but at a slightly reduced usability: require a password every single time in the admin prompt. This helps prevent the knee-jerk reaction to allow access without reading which program or what it was doing. </p>
+<h4>Password managers</h4>
+<p><strong>Side note</strong>: the local admin password cannot be the same as the local user password. Because your organization should already be distributing some password manager and training users in its use, you can actually require the local password to be a lot more complex than the login password as it should be stored in the password manager and not something the user needs to remember by heart. See also: <a href='https://blog.f-secure.com/cyber-security-sauna-episode-13/' target="_blank">my thoughts on password security on Cyber Security Sauna</a>.</p>
+<p>The point about having only <em>local</em> admin privileges is to make it more difficult for the attacker&#39;s payload to immediately spread across the network. On that note, any IT personnel in a Domain Administrator role should have multiple accounts: non-privileged regular login user account for their day to day activities of email, browsing, document creation etc.; one for administering their own local machine; one for logging in remotely to machines and, depending on feasibility, one for having administrative access to servers but without login access.</p>
+<blockquote><p>Login accounts shouldn&#39;t have admin privileges and admin accounts shouldn&#39;t have (remote) login privileges.</p>
+</blockquote>
+<p>In addition, the attempted login use for admin accounts and vice versa should cause security alarms that security personnel can investigate. </p>
+<h3>Single Sign-on &amp; Multi-factor authentication</h3>
+<p>So the user clicked the email and instead of a payload, there was a page requesting them to login to see the content. The page might even have prefilled the user&#39;s username or phone number which were gathered from somewhere else. Security control: holistic deployment of single sign-on (SSO) across your IT environment could have helped the user make an informed decision. If your users don&#39;t need to provide their login details to anywhere except when they are actually logging into their computer, it would be very easy for the user to determine that this is abnormal and I should not enter my credentials.</p>
+<p>Well they entered their credentials despite being suspicious of the login form, and after all, they did get a cool cat video as a reward. What can the attacker now do with those credentials? Well in a secure world, not much. Because your organization has enabled multi-factor authentication (MFA, 2FA) for all of your services that can be accessed from the outside, like email (O365, GSuite, on-prem), VPN or VoIP. </p>
+<blockquote><p>With just a user-password pair the attacker should not be able to do anything besides physically log into the user&#39;s computer.</p>
+</blockquote>
+<p>And every time someone tries to login to your externally available systems with just a username and password without providing the second factor correctly, it should be investigated by your security personnel. Check at least where the login attempt came from - is it from the same country or even continent as the last legit logins; is only a single user account being targeted or is someone enumerating your users. Remember to involve the user to investigate password reuse, resetting their passwords and finding the original email. Then check your systems for other users who have fallen prey to this credential harvesting.</p>
+<h2>End-of-rant</h2>
+<p>Even though I do promote the idea that all increments in security are positive to the overall security level, I am extremely frustrated at how prevalent discussing end-user failings still is.</p>
+<p>Yes. We humans are fallible. #metoo.</p>
+<p>Stop resting your organization&#39;s security on our shoulders. Face the tough reality that you have a dozen or so different ways to prevent, detect and react to any incident and <em>relying</em> on user security awareness training once a quarter is. not. one. of. them.</p>
+<p>As someone who has given security awareness training, I am not trying to cut the branch I&#39;m sitting on no. As said: all increments are better than nothing. But the problem is that on paper <em>&quot;Organize Security Awareness Training&quot;</em> often reads <em>&quot;after this we can blame users.&quot;</em></p>
+<p>Yes, as a security professional, I do understand that these things are difficult. Most of them require money and people. <strong>Tough</strong>. Cost of doing business and doing due diligence to secure it. </p>
+<blockquote><p>Just because we have been living in the wild west for the past decades, doesn&#39;t mean we can escape paying for the lack of security controls forever.</p>
+</blockquote>
+<p>And as a consultant who has discussed this with a plethora of IT professionals, I also know that a whole lot of professionals are aware of many ways to make things more secure, but are usually lacking the money or personnel to implement things more securely. Yes, I feel your pain. But it&#39;s the management that should also be feeling it. I am glad of GDPR and similar things that provide at least some incentives to secure things.</p>
+<p>There is no silver bullet in this post. I just want us, as a whole, to stop blaming users. Many times the malicious action is so well disguised that there is no way for even an informed user to discern any difference.</p>
+<p><strong>Focus on enabling your people to succeed and protect them from harm.</strong></p>
+<p>&nbsp;</p>
+<p><em>JW / Helsinki / 2018-09-30</em></p>
+<p>&nbsp;</p>
