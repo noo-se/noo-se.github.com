@@ -22,8 +22,6 @@ excerpt: |-
 
 ---
 
-# An honest car salesman
-
 <center><img src="/assets/honest-car.jpg" alt="Rusty car" width="100%" /></center>
  
 How to sum up succinctly the introspection, discussions, internal debates, and shifts in world view that has I've gone through in the past year.
