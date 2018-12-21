@@ -24,8 +24,8 @@ excerpt: |-
 
 # An honest car salesman
 
-![Rusty car](/assets/honest-car.jpg)
-
+<center><img src="/assets/honest-car.jpg" alt="Rusty car" width="100%" /></center>
+ 
 How to sum up succinctly the introspection, discussions, internal debates, and shifts in world view that has I've gone through in the past year.
 
 Let's try this.
@@ -129,7 +129,7 @@ The purpose of a governmental offices is to help people and society by providing
 
 That's how I see it at least. Whether it is naive or not is subject to everyone's cynicism about how well gov't agencies work and your personal preference to the size of government.
 
-This is why I am very happy and excited to be joining the *[National Cyber Security Centre Finland (NCSC-FI)](https://www.viestintavirasto.fi/en/cybersecurity/cert-fi.html) * (formerly CERT-FI). I have been appointed into office and will start on 1-Feb-2019.
+This is why I am very happy and excited to be joining the *[National Cyber Security Centre Finland (NCSC-FI)](https://www.viestintavirasto.fi/en/cybersecurity/cert-fi.html)* (formerly CERT-FI). I have been appointed into office and will start on 1-Feb-2019.
 
 The new role will grant me unparalleled visibility into the whole of Finnish society from public sector agencies and offices to different industries and organizations.
 
