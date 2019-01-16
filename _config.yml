@@ -16,7 +16,7 @@ highlighter:      pygments
 #
 baseurl: 
 name: localhost exposed
-url: https://localhost.exposed
+url: https://old.localhost.exposed
 title : localhost exposed
 tagline: finding vulnerabilities in software and wetware
 description: personal website of Jan Wikholm exploring vulnerabilities in humans and machines alike.
@@ -26,7 +26,7 @@ author :
   email : jw@jw.fi
   github : unfo
   twitter : unfo
-  url: https://localhost.exposed/
+  url: https://old.localhost.exposed/
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -38,7 +38,7 @@ author :
 #
 paginate: 2
 
-production_url: https://localhost.exposed
+production_url: https://old.localhost.exposed
 
 # File management
 # include: [".htaccess"]
@@ -68,8 +68,8 @@ kramdown:
   input: GFM
   hard_wrap: false
 
-production_url : https://localhost.exposed
-url: https://localhost.exposed
+production_url : https://old.localhost.exposed
+url: https://old.localhost.exposed
 
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
